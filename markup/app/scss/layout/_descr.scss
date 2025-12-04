@@ -1,0 +1,139 @@
+@use 'vars/vars' as *;
+@use 'vars/mixins' as *;
+
+.descr {
+    margin-bottom: 130px;
+
+    // &__inner {}
+
+    &__title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 68px;
+    }
+
+    &__title-text {
+        margin-right: 37px;
+        font-size: 75px;
+    }
+
+    &__title-block {
+        padding: 10px 25px;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 1) 0%,
+                rgba(255, 255, 255, 0.81) 100%);
+        color: $bg-color;
+        border-radius: 20px;
+        font-size: 30px;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 44px;
+    }
+
+    &__info-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+
+    &__info-who {
+        font-size: 40px;
+        font-weight: 500;
+        font-family: 'Orbitron', sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 29px;
+    }
+
+    &__info-arrow {
+        display: block;
+        max-width: 61px;
+        margin-bottom: 41px;
+
+        & img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__info-answer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 40px;
+        height: 72px;
+        text-align: center;
+        padding: 0 30px;
+        background: linear-gradient(to bottom,
+                rgba(27, 27, 27, 1) 0%,
+                rgba(27, 27, 27, 0) 100%);
+        border-radius: 20px;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+
+@media(max-width: 1070px) {
+    .descr__title-block {
+        font-size: 23px;
+    }
+
+    .descr__info-answer {
+        font-size: 30px;
+    }
+}
+
+@media(max-width: 920px) {
+    .descr__title {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 46px;
+
+        &-text {
+            font-size: 35px;
+            margin: 0;
+        }
+
+        &-block {
+            font-size: 14px;
+        }
+    }
+
+    .descr__info {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .descr__info-who {
+        margin-bottom: 7px;
+        font-size: 20px;
+    }
+
+    .descr__info-arrow {
+        max-width: 22px;
+        margin-bottom: 9px;
+
+    }
+
+    .descr__info-answer {
+        font-size: 18px;
+        height: 38px;
+        padding: 0 16px;
+    }
+
+    button.descr__reg-btn.reg-btn {
+        display: none;
+    }
+}
+
+// @media(max-width: 420px) {}

@@ -1,0 +1,133 @@
+@use 'vars/vars' as *;
+@use 'vars/mixins' as *;
+
+.result {
+    background-color: #171717;
+    margin-bottom: 125px;
+
+    &__inner {
+        position: relative;
+    }
+
+    &__circle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #ffffff;
+        width: 303px;
+        height: 303px;
+        border-radius: 100%;
+    }
+
+    &__text-block {
+        width: 358px;
+        height: 358px;
+        background-color: #171717;
+        border-radius: 100%;
+        position: absolute;
+        left: 50%;
+        top: -150px;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 26px;
+        font-weight: 500;
+        color: #888888;
+        font-style: italic;
+
+        & span {
+            font-style: normal;
+            font-size: 35px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            color: $text-color;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            background-image: url('../../images/border-result.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 569px;
+            height: 259px;
+            bottom: -50px;
+        }
+    }
+
+    &__descr {
+        padding-top: 276px;
+        text-align: center;
+        font-size: 26px;
+        color: $text-color;
+        margin-bottom: 35px;
+        font-weight: 500;
+
+        & span {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+
+    &__reg-btn {
+        margin-bottom: 35px;
+    }
+
+    &__img {
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media(max-width: 920px) {
+    .result__circle {
+        font-size: 13px;
+        border: 1px solid #EBFC56;
+        width: 150px;
+        height: 150px;
+
+        & span {
+            font-size: 16px;
+        }
+    }
+
+    .result__text-block {
+        width: 177px;
+        height: 177px;
+        top: -70px;
+    }
+
+    .result__text-block::before {
+        background-image: url(../../images/border-result-mobile.svg);
+        width: 252px;
+        height: 114px;
+        bottom: -10px;
+    }
+
+    .result__img {
+        display: none;
+    }
+
+    .result__descr {
+        padding-top: 138px;
+
+        font-size: 12px;
+        max-width: 281px;
+        margin: 0 auto 32px;
+
+        & span {
+            font-size: 12px;
+        }
+    }
+
+    .result__inner {
+        padding-bottom: 32px;
+    }
+
+    .bag {
+        margin-bottom: 150px;
+    }
+}

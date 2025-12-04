@@ -1,0 +1,142 @@
+@use 'vars/vars' as *;
+@use 'vars/mixins' as *;
+
+.earn {
+    margin-bottom: 65px;
+
+    &__inner {}
+
+    &__title {
+        font-size: 59px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 100px;
+    }
+
+    &__title-block {
+        background-color: $primary;
+        color: $bg-color;
+        padding: 13px 20px;
+    }
+
+    &__blocks {
+        display: grid;
+        gap: 70px 66px;
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+
+        & .earn__block:nth-child(6) {
+            justify-content: center;
+            background-image: none;
+        }
+    }
+
+    &__block {
+        max-width: 547px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 260px;
+        background-image: url(../../images/earn/bg.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__block-img {
+        margin-top: 15px;
+        margin-bottom: 18px;
+        max-width: 97px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__block-text {
+        color: $text-color;
+        font-size: 22px;
+        max-width: 442px;
+    }
+
+    &__reg-btn {
+        margin: 0;
+    }
+}
+
+
+@media(max-width: 1200px) {
+
+    h2.earn__title {
+        display: block;
+        line-height: 155%;
+    }
+
+    span.earn__title-block {
+
+        display: inline;
+    }
+
+    .earn__blocks {
+        margin-top: 36px;
+    }
+
+    .earn__block {
+        min-width: 370px;
+        height: auto;
+        border-radius: 20px;
+        padding-bottom: 28px;
+    }
+}
+
+@media(max-width: 920px) {
+
+    .earn__blocks {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    h2.earn__title {
+        margin-bottom: 36px;
+        width: 310px;
+        margin: 0 auto 36px;
+    }
+
+
+    .earn__block-img {
+        width: 82px;
+        height: 82px;
+    }
+
+    .earn__block-text {
+        font-size: 14px;
+    }
+
+    .earn__block {
+        max-width: 370px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .earn__inner {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    h2.earn__title {
+        font-size: 30px;
+    }
+
+    .earn__title-block {
+        padding: 5px;
+    }
+
+    .earn__blocks .earn__block:nth-child(6) {
+        display: none;
+    }
+}

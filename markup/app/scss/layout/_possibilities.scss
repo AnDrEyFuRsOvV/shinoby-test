@@ -1,0 +1,180 @@
+@use 'vars/vars' as *;
+@use 'vars/mixins' as *;
+
+.possibilities {
+    margin-bottom: 130px;
+
+    &__inner {}
+
+    &__title {
+        font-size: 75px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    &__title-block {
+        background-color: $primary;
+        padding: 2px 18px;
+        color: $bg-color;
+    }
+
+    &__accent {
+        font-weight: 500;
+        font-style: italic;
+        color: $primary;
+        font-size: 25px;
+        padding: 12px;
+        background: linear-gradient(180deg,
+                #1B1B1B 0%,
+                rgba(27, 27, 27, 0) 100%);
+        box-shadow: 0px 4px 15px 0px #000000;
+        border-radius: 20px;
+        width: fit-content;
+        margin-bottom: 41px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 33px;
+    }
+
+    &__card-line {
+        background-color: #161618;
+        width: 100%;
+        box-shadow: 0px 4px 28px 0px rgba(0, 0, 0, 0.52);
+        padding: 20px 0;
+
+        & .container {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__card-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        width: 212px;
+
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        &::before {
+            content: "";
+            width: 1px;
+            height: 100%;
+            position: absolute;
+            right: -55px;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 0) 100%);
+        }
+    }
+
+    &__card-box-dot {
+        border: 1px solid $primary;
+        background-color: transparent;
+        width: 25px;
+        height: 25px;
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__card-box-text {
+        // max-width: 300px;
+        text-align: center;
+        margin-top: 8px;
+    }
+}
+
+.dot-decor {
+    border-radius: 100px;
+    background-color: $primary;
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+
+
+@media(max-width: 1200px) {
+    .possibilities__card-box {
+        width: 150px;
+    }
+
+    .possibilities__card-box::before {
+        right: -46%;
+    }
+}
+
+
+@media(max-width: 920px) {
+    .possibilities__inner {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .possibilities__card-line {
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .possibilities__content {
+        gap: 0;
+    }
+
+    .possibilities__card-box::before {
+        display: none;
+    }
+
+    .possibilities__card-line .container {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .possibilities__title {
+        font-size: 28px;
+    }
+
+    .possibilities__accent {
+        margin-bottom: 28px;
+        font-size: 15px;
+        padding: 8px 13px;
+    }
+
+    .possibilities__card-box-dot {
+        width: 11px;
+        height: 11px;
+    }
+
+    .dot-decor {
+        width: 7px;
+        height: 7px;
+    }
+
+    .possibilities__card-box {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .possibilities__card-box-text {
+        text-align: left;
+        margin-left: 8px;
+        width: 100%;
+        margin-top: 0;
+    }
+}

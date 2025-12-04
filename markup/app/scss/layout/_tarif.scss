@@ -1,0 +1,259 @@
+@use 'vars/vars' as *;
+@use 'vars/mixins' as *;
+
+.tarif {
+    margin-bottom: 100px;
+
+    // &__inner {}
+
+    &__title {
+        display: flex;
+        align-items: center;
+        font-size: 75px;
+        justify-content: center;
+        margin-bottom: 27px;
+    }
+
+    &__title-block {
+        background-color: $primary;
+        color: $bg-color;
+        padding: 2px 18px;
+        margin-left: 10px;
+    }
+
+    &__sub-title {
+        color: #C3C3C3;
+        font-size: 26px;
+        max-width: 719px;
+        margin: 0 auto;
+    }
+
+    &__text-accent {
+        color: $text-color;
+    }
+
+    &__card {
+        padding: 22px 16px;
+        background: linear-gradient(180deg, #191919 0%, #000 100%);
+        max-width: 601px;
+        margin: 32px auto 53px;
+        border-radius: 20px;
+        position: relative;
+        // height: 832px;
+        z-index: 2;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            background: linear-gradient(180deg, #ffffff, #EBFC56 90%);
+            border-radius: 20px;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+    }
+
+    &__card-inner {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+        position: relative;
+        z-index: 2;
+        padding: 68px 0 56px;
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(70px);
+        -webkit-backdrop-filter: blur(70px);
+        box-shadow:
+            inset -36px 36px 36px rgba(255, 255, 255, 0.02),
+            inset 36px -36px 36px rgba(0, 0, 0, 0.02);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            padding: 1px;
+            border-radius: 20px;
+            background: linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 1) 100%);
+            z-index: -1;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+    }
+
+    &__card-title {
+        font-weight: 600;
+        font-size: 45px;
+        margin-bottom: 19px;
+        text-align: center;
+        color: $primary;
+    }
+
+    &__card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-left: 12px;
+    }
+
+    &__card-list-item {
+        display: flex;
+        align-items: center;
+    }
+
+    &__card-dot {
+        background-color: $primary;
+        width: 16px;
+        height: 16px;
+        margin-right: 15px;
+        border-radius: 100%;
+    }
+
+    &__card-text {
+        font-size: 20px;
+        font-weight: 500;
+        color: $text-color;
+        max-width: 501px;
+        width: 100%;
+    }
+
+    &__sale-block {
+        background: linear-gradient(180deg,
+                #1B1B1B 0%,
+                rgba(27, 27, 27, 0) 100%);
+        box-shadow: 0px 4px 15px 0px #000000;
+        padding: 18px 0;
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+        font-style: italic;
+        color: $primary;
+        font-size: 25px;
+        margin-top: 53px;
+        margin-bottom: 11px;
+    }
+
+    &__old-price {
+        font-weight: 600;
+        text-decoration: line-through;
+        color: #888888;
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &__price {
+        color: $text-color;
+        font-size: 45px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 155%;
+        margin-bottom: 12px;
+    }
+
+    &__price-descr {
+        color: #BABABA;
+        font-weight: 500;
+        font-style: italic;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    &__reg-btn {}
+}
+
+@media(max-width: 1200px) {
+    .tarif__title {
+        display: block;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .tarif__title-block {
+        display: inline;
+        line-height: 155%;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 920px) {
+    .tarif__title {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .tarif__sub-title {
+        text-align: left;
+        margin-left: auto;
+        margin-right: 0;
+        max-width: 292px;
+        font-size: 13px;
+    }
+
+    .tarif__inner {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .tarif__card {
+        max-width: 300px;
+    }
+
+    .tarif__card-title {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .tarif__card-inner {
+        padding-top: 32px;
+        padding-bottom: 38px;
+    }
+
+    .tarif__card-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .tarif__card-list-item p {
+        font-size: 11px;
+    }
+
+    .tarif__sale-block {
+        margin-top: 16px;
+        margin-bottom: 5px;
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    .tarif__old-price {
+        font-size: 18px;
+        margin-bottom: 1px;
+    }
+
+    .tarif__price {
+        font-size: 23px;
+        margin-bottom: 5px;
+    }
+
+    .tarif__price-descr {
+        font-size: 11px;
+    }
+
+    .tarif__card {
+        margin-bottom: 0;
+    }
+
+    button.tarif__reg-btn.reg-btn {
+        display: none;
+    }
+}

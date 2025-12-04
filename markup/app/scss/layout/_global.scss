@@ -1,0 +1,128 @@
+@use 'vars/vars' as *;
+@use 'vars/mixins' as *;
+
+
+html,
+body {
+    background-color: $bg-color;
+    color: $text-color;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    height: 100%;
+}
+
+h1,
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sticky-footer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.reg-btn {
+    display: block;
+    outline: none;
+    transition: all .3s;
+    border-radius: 30px;
+    background-color: $primary;
+    cursor: pointer;
+    color: $bg-color;
+    max-width: 367px;
+    padding: 34px 0;
+    font-size: 25px;
+    font-weight: 700;
+    border: none;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+
+    &:hover {
+        transform: scale(1.12);
+    }
+}
+
+.section__arrow {
+    width: fit-content;
+    display: block;
+    margin: 42px auto 0;
+}
+
+.section__arrow-img {
+    display: block;
+}
+
+.shinobi-transition {
+    display: block;
+    height: 110px;
+    position: relative;
+    // overflow: hidden;
+}
+
+.background-gray {
+    background-color: #171717;
+}
+
+.long-line {}
+
+.tri.left {
+    position: absolute;
+    inset: 0;
+    background: #0c0b0e;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.divider-img {
+    background-image: url("../../images/shinobi-text.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 165px;
+    top: -20px;
+    z-index: 8;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+}
+
+.tri.right {
+    position: absolute;
+    inset: 0;
+    background: #171717;
+    clip-path: polygon(100% 100%, 100% 0, 0 100%);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}

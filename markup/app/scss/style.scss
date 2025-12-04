@@ -1,0 +1,23 @@
+// Reset typography and libs
+@use 'settings/libs';
+@use 'settings/reset';
+@use 'settings/typography';
+// Layout
+@use 'layout/global';
+@use 'layout/header';
+@use 'layout/top';
+@use 'layout/descr';
+@use 'layout/features';
+@use 'layout/how';
+@use 'layout/work';
+@use 'layout/possibilities';
+@use 'layout/strategy';
+@use 'layout/clients';
+@use 'layout/bag';
+@use 'layout/result';
+@use 'layout/slider';
+@use 'layout/tarif';
+@use 'layout/not-ready';
+@use 'layout/earn';
+@use 'layout/disclamer';
+@use 'layout/footer';
